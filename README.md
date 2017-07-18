@@ -1,1 +1,1 @@
-# liri
+LIRI-node-app is a node language interpritatoin and recognition interface application.
