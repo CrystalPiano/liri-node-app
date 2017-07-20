@@ -6,15 +6,20 @@ var tweets = require("./my-tweets");
 var keys = require("./keys");
 
 // Instructions
-console.log("Search for my tweets, spotify a song, search for movie info, or do a random command!");
-console.log("Type 'my-tweets' for tweets, 'spotify-this-song' for a song, 'movie-this' for film info");
-console.log("and 'do-what-it-says' for a random command.");
+console.log("-----------------------");
+console.log("Search for my tweets, spotify a song, look up movie info, or do a random command!");
+console.log("Type 'my-tweets' for tweets, 'spotify-this-song' followed by a song, 'movie-this' folowed by a");
+console.log("movie name for film info and 'do-what-it-says' for a random command.");
+console.log("-----------------------");
 
 // Take command line arguments
 var nodeArgs = process.argv;
 
+// Running movie-this based on user input
+if (nodeArgs[3] === 'movie-this') {
+
 // We then run the request module on a URL with a JSON
-request("http://www.omdbapi.com/?t=" + nodeArgs[3] + "s&y=&plot=short&apikey=40e9cece", function(error, response, body) {
+request("http://www.omdbapi.com/?t=" + nodeArgs[4] + "s&y=&plot=short&apikey=40e9cece", function(error, response, body) {
 
 // If there were no errors and the response code was 200 (i.e. the request was successful)...
   if (!error && response.statusCode === 200) {
@@ -34,5 +39,21 @@ request("http://www.omdbapi.com/?t=" + nodeArgs[3] + "s&y=&plot=short&apikey=40e
     // Print Actors
     console.log("The movie's rating is: " + JSON.parse(body).Actors);
   }
-});
+
+ });
+
+};
+
+if (nodeArgs[3] === 'spotify-this-song') {
+
+    // Print Artist(s)
+    console.log("The movie's Title is: " + JSON.parse(body).Title);
+    // Print Song Name
+    console.log("The movie's rating is: " + JSON.parse(body).imdbRating);
+    // Print Preview Link of song
+    console.log("The movie's rating is: " + JSON.parse(body).Ratings.Value);
+    // Print Song Album
+    console.log("The movie's rating is: " + JSON.parse(body).Country);
+
+};
 
