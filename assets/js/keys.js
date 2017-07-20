@@ -8,3 +8,8 @@ exports.twitterKeys = {
   access_token_key: '386351572-lHqOFTbe2UzrygNKelx9MbleUJZ1hTKbC0xBkZrc',
   access_token_secret: 'xr2OKiHZ0uOoQPporJaJ4OGBTmOXI02duk3BJvAM93JYV',
 };
+
+exports.spotifyKeys = {
+	client_id: '9b6cb172023c46e79690dce205feec39',
+	client_secret: '3b0ddab83092459384795aa3120af744',
+};

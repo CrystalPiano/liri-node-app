@@ -1,6 +1,7 @@
 // Required Files and Packages
 var twitter = require("twitter");
 var spotify = require("node-spotify-api");
+var SpotifyWebApi = require('spotify-web-api-node');
 var request = require("request");
 var tweets = require("./my-tweets");
 var keys = require("./keys");
@@ -46,14 +47,31 @@ request("http://www.omdbapi.com/?t=" + nodeArgs[4] + "s&y=&plot=short&apikey=40e
 
 if (nodeArgs[3] === 'spotify-this-song') {
 
-    // Print Artist(s)
-    console.log("The movie's Title is: " + JSON.parse(body).Title);
+// credentials are optional
+var spotifyApi = new SpotifyWebApi({
+  clientId : 'fcecfc72172e4cd267473117a17cbd4d',
+  clientSecret : 'a6338157c9bb5ac9c71924cb2940e1a7',
+  redirectUri : 'http://www.example.com/callback'
+});
+
+    var songTitle = nodeArgs[4];
+    var queryURL = "http://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=40e9cece";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      console.log(response);
+      console.log(response.Runtime);
+    });
+
     // Print Song Name
-    console.log("The movie's rating is: " + JSON.parse(body).imdbRating);
-    // Print Preview Link of song
-    console.log("The movie's rating is: " + JSON.parse(body).Ratings.Value);
+    console.log("The Song name is: " + JSON.parse(body).name);
+    // Print Artist(s)
+    console.log("This songs artist(s): " + JSON.parse(body).Title);
     // Print Song Album
-    console.log("The movie's rating is: " + JSON.parse(body).Country);
+    console.log("The Album is: " + JSON.parse(body).);
+    // Print Preview Link of song
+    console.log("Preview Link: " + JSON.parse(body).preview_url);
 
 };
-
