@@ -1,16 +1,17 @@
-// Required files and Packages
+// Required Files and Packages
 var twitter = require("twitter");
 var spotify = require("node-spotify-api");
-var request = require("require");
+var request = require("request");
 var tweets = require("./my-tweets");
 var keys = require("./keys");
 
+// Instructions
+console.log("Search for my tweets, spotify a song, search for movie info, or do a random command!");
+console.log("Type 'my-tweets' for tweets, 'spotify-this-song' for a song, 'movie-this' for film info");
+console.log("and 'do-what-it-says' for a random command.");
 
 // Take command line arguments
 var nodeArgs = process.argv;
-
-
-
 
 // We then run the request module on a URL with a JSON
 request("http://www.omdbapi.com/?t=" + nodeArgs[3] + "s&y=&plot=short&apikey=40e9cece", function(error, response, body) {
