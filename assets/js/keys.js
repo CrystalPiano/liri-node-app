@@ -3,10 +3,10 @@ console.log('keys are loaded');
 console.log("-----------------------");
 
 exports.twitterKeys = {
-  consumer_key: 'ytkZOwmnzqAZimB6eBMC341Uw',
-  consumer_secret: 'xE9PCrAu5gCxwziUaNnQpHrMdKnpOyDVW97Xndfwao7FiI6Ofh',
-  access_token_key: '386351572-lHqOFTbe2UzrygNKelx9MbleUJZ1hTKbC0xBkZrc',
-  access_token_secret: 'xr2OKiHZ0uOoQPporJaJ4OGBTmOXI02duk3BJvAM93JYV',
+  consumer_key: 'QkG3E5qKB992CuUo8obtcwMov',
+  consumer_secret: 'UzaX2HwKnMS2Z2W071ZwIwwKRaSd7jcmZnnI1DgTmdYm0iuGpf',
+  access_token_key: '888256048972169219-9xm8Y2bMex6BGnlWb6b3tRoJepf5aAL',
+  access_token_secret: 'wERZoZei8HKwDIbWw7XzIyzFDTOCzkhARWvPqV7bww2Xh',
 };
 
 exports.spotifyKeys = {
