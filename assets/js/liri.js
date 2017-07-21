@@ -1,3 +1,8 @@
+// TO DO
+// Figure out Spotify API
+// Get OMDB Call working
+//
+
 // Required Files and Packages
 var twitter = require("twitter");
 var spotify = require("node-spotify-api");
@@ -68,10 +73,23 @@ var spotifyApi = new SpotifyWebApi({
     // Print Song Name
     console.log("The Song name is: " + JSON.parse(body).name);
     // Print Artist(s)
-    console.log("This songs artist(s): " + JSON.parse(body).Title);
+    console.log("This songs artist(s): " + JSON.parse(body);
     // Print Song Album
-    console.log("The Album is: " + JSON.parse(body).);
+    console.log("The Album is: " + JSON.parse(body));
     // Print Preview Link of song
-    console.log("Preview Link: " + JSON.parse(body).preview_url);
+    console.log("Preview Link: " + JSON.parse(body).preview_url));
 
 };
+
+if (nodeArgs[3] === 'my-tweets') {
+
+    var queryURL = "https://api.twitter.com/1.1/search/tweets.json?q=%40twitterapi";
+}
+
+$.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      console.log(response);
+      console.log(response.Runtime);
+    });
