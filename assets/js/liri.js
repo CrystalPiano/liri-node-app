@@ -5,6 +5,7 @@
 
 // Required Files and Packages
 var twitter = require("twitter");
+var twit = require("twit");
 var spotify = require("node-spotify-api");
 var SpotifyWebApi = require('spotify-web-api-node');
 var request = require("request");
