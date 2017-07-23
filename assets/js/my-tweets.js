@@ -14,6 +14,7 @@ var request = require("request");
 
 console.log(config);
 
-T.get('search/tweets', { q: MCRNCommand since:2011-07-11, count: 20 }, function(err, data, response) {
-  console.log(data)
+T.get('search/tweets', { q: 'mcrn since:2016-01-01', count: 20 }, function(err, data, response) {
+  console.log(data);
+  console.log(response);
 });
