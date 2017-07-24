@@ -2,7 +2,20 @@ var Twit = require("twit");
 var config = require("./keys.js");
 var request = require("request");
 
-//var T = new Twit(config);
+var T = new Twit(config);
+
+var params = {
+  q: 'MCRN', count: 2
+};
+
+T.get('search/tweets', params, gotData);
+
+function gotData(err, data, response) {
+  var tweets = data.statuses;
+  for (var i = 0; i , tweets.length; i++) {
+    console.log(tweets[i].text);
+  }
+};
 
 //var tweets = new Twit({
   //consumer_key: 'QkG3E5qKB992CuUo8obtcwMov',
@@ -14,7 +27,7 @@ var request = require("request");
 
 console.log(config);
 
-T.get('search/tweets', { q: 'mcrn since:2016-01-01', count: 20 }, function(err, data, response) {
-  console.log(data);
-  console.log(response);
-});
+//T.get('search/tweets', { q: 'mcrn since:2016-01-01', count: 20 }, function(err, data, response) {
+  //console.log(data);
+  //console.log(response);
+//});
